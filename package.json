@@ -270,15 +270,9 @@
   "scripts": {
     "bundle": "browserify src/wallet_address_validator.js --standalone WAValidator --outfile dist/wallet-address-validator.js",
     "minify": "uglifyjs -c -m -o dist/wallet-address-validator.min.js -- dist/wallet-address-validator.js",
-    "test:node": "mocha test",
-    "test:browser": "echo Temp bypass until jenkins setup",
-    "test:browser_": "karma start",
-    "test": "yarn run bundle && yarn run minify && npm run test:node && npm run test:browser",
-    "start": "npm run bundle && npm run minify && npm test",
+    "test": "npm run bundle && npm run minify && mocha test && karma start",
     "generateReadme": "node debug/generateReadme.js && git add README.md dist/wallet-address-validator.min.js.gz package.json",
-    "createMin": "yarn run bundle && yarn run minify && git add dist/wallet-address-validator.js dist/wallet-address-validator.min.js",
-    "preversion": "yarn run createMin && yarn run generateReadme",
-    "postversion": "git push origin HEAD --follow-tags && hub pull-request -o -b dev -m v%npm_package_version%"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@iota/validators": "^1.0.0-beta.6",
@@ -295,6 +289,7 @@
     "browserify": "^15.1.0",
     "chai": "^4.1.2",
     "eslint-config-standard": "^13.0.1",
+    "husky": "^7.0.4",
     "karma": "^2.0.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.2.0",
