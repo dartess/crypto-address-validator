@@ -270,8 +270,9 @@
   "scripts": {
     "tsc": "rimraf lib && tsc",
     "bundle": "esbuild src/browser.js --outfile=dist/wallet-address-validator.min.js --bundle --define:global=window --minify",
-    "test": "npm run bundle && ts-mocha test && karma start",
-    "pre-commit": "npm run generateReadme",
+    "lint": "eslint ./src --ext .ts",
+    "test": "npm run lint && npm run bundle && ts-mocha test && karma start",
+    "pre-commit": "npx lint-staged && npm run generateReadme",
     "generateReadme": "ts-node debug/generateReadme.js && git add README.md dist/wallet-address-validator.min.js.gz package.json",
     "prepare": "husky install"
   },
@@ -294,13 +295,20 @@
   },
   "devDependencies": {
     "@types/node": "^16.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
     "chai": "^4.1.2",
     "esbuild": "^0.14.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-plugin-import": "^2.25.2",
     "husky": "^7.0.4",
     "karma": "^2.0.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-mocha": "^1.3.0",
+    "lint-staged": "^12.1.2",
     "mocha": "^5.0.2",
     "node-gzip": "^1.1.2",
     "prettysize": "^2.0.0",
@@ -310,5 +318,8 @@
   },
   "browser": {
     "stream": "stream-browserify"
+  },
+  "lint-staged": {
+    "src/**/*.ts": "eslint --cache --fix"
   }
 }

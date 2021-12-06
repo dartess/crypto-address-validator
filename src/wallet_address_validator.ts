@@ -1,6 +1,6 @@
-var currencies = require('./currencies')
+const currencies = require('./currencies');
 
-var DEFAULT_CURRENCY_NAME = 'bitcoin'
+const DEFAULT_CURRENCY_NAME = 'bitcoin';
 
 export default {
   /**
@@ -9,22 +9,24 @@ export default {
    * @param address The target address
    * @param currencyNameOrSymbol The name or the symbol/ticker of the currency
    * @param networkType Network Type. Could be 'prod', 'both' and 'testnet'
-   * @param {Array} addressFormats Array of formats. For example ['legacy', 'slp ', 'cash']
-   * @returns {Error|Boolean}
+   * @param addressFormats Array of formats. For example ['legacy', 'slp ', 'cash']
+   *
+   * @returns is valid
    */
-  validate: function (address: string, currencyNameOrSymbol: string, networkType: string, addressFormats: any) {
-    var currency = currencies.getByNameOrSymbol(currencyNameOrSymbol || DEFAULT_CURRENCY_NAME)
+  validate(
+    address: string,
+    currencyNameOrSymbol: string,
+    networkType: string,
+    addressFormats: string[] = [],
+  ): boolean {
+    const currency = currencies.getByNameOrSymbol(currencyNameOrSymbol || DEFAULT_CURRENCY_NAME);
 
     if (currency && currency.validator) {
-      if (!Array.isArray(addressFormats)) {
-        addressFormats = []
-      }
-
-      return currency.validator.isValidAddress(address, currency, networkType, addressFormats)
+      return currency.validator.isValidAddress(address, currency, networkType, addressFormats);
     }
 
-    throw new Error('Missing validator for currency: ' + currencyNameOrSymbol)
+    throw new Error(`Missing validator for currency: ${currencyNameOrSymbol}`);
   },
 
-  CURRENCIES: currencies.CURRENCIES
-}
+  CURRENCIES: currencies.CURRENCIES,
+};
