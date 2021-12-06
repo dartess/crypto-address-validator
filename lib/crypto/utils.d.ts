@@ -1,11 +1,1 @@
-import BECH32 = require("./bech32");
-export { BECH32 as bech32 };
-export declare function toHex(arrayOfBytes: any): string;
-export declare function sha256(hexString: any): any;
-export declare function sha256Checksum(payload: any): any;
-export declare function blake256(hexString: any): string;
-export declare function blake256Checksum(payload: any): string;
-export declare function blake2b(hexString: any, outlen: any): any;
-export declare function keccak256(hexString: any): any;
-export declare function keccak256Checksum(payload: any): any;
-export declare function blake2b256(hexString: any): any;
+export {};

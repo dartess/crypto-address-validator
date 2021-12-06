@@ -1,5 +1,8 @@
-export function decode(bechString: any): {
-    hrp: any;
-    data: number[];
-} | null;
-export function encode(hrp: any, data: any): string;
+declare const bech32: {
+    decode(bechString: string): {
+        data: Array<number>;
+        hrp: string;
+    } | null;
+    encode(hrp: string, data: Array<number>): string;
+};
+export { bech32 };

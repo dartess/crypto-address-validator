@@ -1,3 +1,5 @@
+import {bech32} from './bech32';
+
 // Copyright (c) 2017 Pieter Wuille
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -17,8 +19,6 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
-var bech32 = require('./bech32')
 
 function convertbits (data, frombits, tobits, pad) {
   var acc = 0

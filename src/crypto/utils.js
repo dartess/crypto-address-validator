@@ -1,8 +1,8 @@
+import { bech32 } from './bech32'
 var JsSHA = require('jssha/src/sha256')
 var Blake256 = require('./blake256')
 var keccak256 = require('./sha3')['keccak256']
 var Blake2B = require('./blake2b')
-const BECH32 = require('./bech32')
 
 function numberToHex (number) {
   var hex = Math.round(number).toString(16)
@@ -13,7 +13,7 @@ function numberToHex (number) {
 }
 
 module.exports = {
-  bech32: BECH32,
+  bech32,
   toHex: function (arrayOfBytes) {
     var hex = ''
     for (var i = 0; i < arrayOfBytes.length; i++) {
