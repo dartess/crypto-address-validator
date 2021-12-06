@@ -5,7 +5,7 @@ var isNode = typeof module !== 'undefined' && typeof module.exports !== 'undefin
 var chai = isNode ? require('chai') : window.chai
 var expect = chai.expect
 
-var WAValidator = isNode ? require('../src/wallet_address_validator') : window.WAValidator
+var WAValidator = isNode ? require('../src/wallet_address_validator').default : window.WAValidator
 
 function valid (address, currency, networkType, addressFormats) {
   var result = WAValidator.validate(address, currency, networkType, addressFormats)

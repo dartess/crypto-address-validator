@@ -1,1 +1,1 @@
-window.WAValidator = require('./wallet_address_validator');
+window.WAValidator = require('./wallet_address_validator').default;
