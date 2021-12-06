@@ -1,4 +1,4 @@
-var base58 = require('./crypto/base58')
+import { base58 } from './crypto/base58';
 var segwit = require('./crypto/segwit_addr')
 var cryptoUtils = require('./crypto/utils')
 

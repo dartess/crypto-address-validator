@@ -5,7 +5,7 @@ Forked from [ognus/wallet-address-validator](https://github.com/ognus/wallet-add
 
 Did you know? This package is under active development by [Swyftx](https://swyftx.com.au). Swyftx allows you to buy and sell Bitcoin, Etherium, Ripple and many more assets using Australian Dollars. [Buy Bitcoin in Australia](https://swyftx.com.au)
 
-**File size is ~154.4 kB (minifed and gzipped - ~71.2% smaller)**.
+**File size is ~154.3 kB (minifed and gzipped - ~71.2% smaller)**.
 
 ## Installation
 

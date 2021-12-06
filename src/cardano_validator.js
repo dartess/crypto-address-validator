@@ -1,6 +1,6 @@
+import { base58 } from './crypto/base58';
 var cbor = require('cbor-js')
 var CRC = require('crc')
-var base58 = require('./crypto/base58')
 
 function getDecoded (address) {
   try {

@@ -1,9 +1,8 @@
-const base58 = require('./crypto/base58')
+import { base58 } from './crypto/base58';
 
 function getDecoded (address) {
   try {
-    var decoded = base58.decode(address)
-    return decoded
+    return base58.decode(address)
   } catch (e) {
     // if decoding fails, assume invalid address
     return null

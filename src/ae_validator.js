@@ -1,4 +1,4 @@
-var base58 = require('./crypto/base58')
+import { base58 } from './crypto/base58';
 
 const ALLOWED_CHARS = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
 

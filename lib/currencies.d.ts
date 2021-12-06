@@ -1,3 +1,5 @@
+import BTCValidator = require("./bitcoin_validator");
+import ADAValidator = require("./cardano_validator");
 import XMRValidator = require("./monero_validator");
 export const CURRENCIES: ({
     name: string;
@@ -6,9 +8,7 @@ export const CURRENCIES: ({
         prod: string[];
         testnet: string[];
     };
-    validator: {
-        isValidAddress: (address: string, currency: Object, networkType: string, addressFormats: any[]) => boolean | Error;
-    };
+    validator: typeof BTCValidator;
     expectedLength?: undefined;
     hashFunction?: undefined;
     regex?: undefined;
@@ -20,9 +20,7 @@ export const CURRENCIES: ({
         prod: string[];
         testnet?: undefined;
     };
-    validator: {
-        isValidAddress: (address: any, currency: any, networkType: any) => boolean;
-    };
+    validator: typeof BTCValidator;
     expectedLength?: undefined;
     hashFunction?: undefined;
     regex?: undefined;
@@ -35,9 +33,7 @@ export const CURRENCIES: ({
         prod: string[];
         testnet: string[];
     };
-    validator: {
-        isValidAddress: (address: any, currency: any, networkType: any) => boolean;
-    };
+    validator: typeof BTCValidator;
     hashFunction?: undefined;
     regex?: undefined;
     iAddressTypes?: undefined;
@@ -50,9 +46,7 @@ export const CURRENCIES: ({
     };
     hashFunction: string;
     expectedLength: number;
-    validator: {
-        isValidAddress: (address: any, currency: any, networkType: any) => boolean;
-    };
+    validator: typeof BTCValidator;
     regex?: undefined;
     iAddressTypes?: undefined;
 } | {
@@ -65,9 +59,16 @@ export const CURRENCIES: ({
     expectedLength: number;
     hashFunction: string;
     regex: RegExp;
-    validator: {
-        isValidAddress: (address: any, currency: any, networkType: any) => boolean;
-    };
+    validator: typeof BTCValidator;
+    iAddressTypes?: undefined;
+} | {
+    name: string;
+    symbol: string;
+    validator: typeof ADAValidator;
+    addressTypes?: undefined;
+    expectedLength?: undefined;
+    hashFunction?: undefined;
+    regex?: undefined;
     iAddressTypes?: undefined;
 } | {
     name: string;
@@ -84,17 +85,6 @@ export const CURRENCIES: ({
     expectedLength?: undefined;
     hashFunction?: undefined;
     regex?: undefined;
-} | {
-    name: string;
-    symbol: string;
-    validator: {
-        isValidAddress: (address: any, currency: any, networkType: any) => boolean | undefined;
-    };
-    addressTypes?: undefined;
-    expectedLength?: undefined;
-    hashFunction?: undefined;
-    regex?: undefined;
-    iAddressTypes?: undefined;
 })[];
 export declare function getByNameOrSymbol(currencyNameOrSymbol: any): {
     name: string;
@@ -103,9 +93,7 @@ export declare function getByNameOrSymbol(currencyNameOrSymbol: any): {
         prod: string[];
         testnet: string[];
     };
-    validator: {
-        isValidAddress: (address: string, currency: Object, networkType: string, addressFormats: any[]) => boolean | Error;
-    };
+    validator: typeof BTCValidator;
     expectedLength?: undefined;
     hashFunction?: undefined;
     regex?: undefined;
@@ -117,9 +105,7 @@ export declare function getByNameOrSymbol(currencyNameOrSymbol: any): {
         prod: string[];
         testnet?: undefined;
     };
-    validator: {
-        isValidAddress: (address: any, currency: any, networkType: any) => boolean;
-    };
+    validator: typeof BTCValidator;
     expectedLength?: undefined;
     hashFunction?: undefined;
     regex?: undefined;
@@ -132,9 +118,7 @@ export declare function getByNameOrSymbol(currencyNameOrSymbol: any): {
         prod: string[];
         testnet: string[];
     };
-    validator: {
-        isValidAddress: (address: any, currency: any, networkType: any) => boolean;
-    };
+    validator: typeof BTCValidator;
     hashFunction?: undefined;
     regex?: undefined;
     iAddressTypes?: undefined;
@@ -147,9 +131,7 @@ export declare function getByNameOrSymbol(currencyNameOrSymbol: any): {
     };
     hashFunction: string;
     expectedLength: number;
-    validator: {
-        isValidAddress: (address: any, currency: any, networkType: any) => boolean;
-    };
+    validator: typeof BTCValidator;
     regex?: undefined;
     iAddressTypes?: undefined;
 } | {
@@ -162,9 +144,16 @@ export declare function getByNameOrSymbol(currencyNameOrSymbol: any): {
     expectedLength: number;
     hashFunction: string;
     regex: RegExp;
-    validator: {
-        isValidAddress: (address: any, currency: any, networkType: any) => boolean;
-    };
+    validator: typeof BTCValidator;
+    iAddressTypes?: undefined;
+} | {
+    name: string;
+    symbol: string;
+    validator: typeof ADAValidator;
+    addressTypes?: undefined;
+    expectedLength?: undefined;
+    hashFunction?: undefined;
+    regex?: undefined;
     iAddressTypes?: undefined;
 } | {
     name: string;
@@ -181,15 +170,4 @@ export declare function getByNameOrSymbol(currencyNameOrSymbol: any): {
     expectedLength?: undefined;
     hashFunction?: undefined;
     regex?: undefined;
-} | {
-    name: string;
-    symbol: string;
-    validator: {
-        isValidAddress: (address: any, currency: any, networkType: any) => boolean | undefined;
-    };
-    addressTypes?: undefined;
-    expectedLength?: undefined;
-    hashFunction?: undefined;
-    regex?: undefined;
-    iAddressTypes?: undefined;
 } | undefined;
