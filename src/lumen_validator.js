@@ -1,3 +1,5 @@
+const { Buffer } = require('buffer')
+
 const baseX = require('base-x')
 const crc = require('crc')
 

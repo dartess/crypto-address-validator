@@ -1,3 +1,5 @@
+const { Buffer } = require('buffer')
+
 const { base32 } = require('rfc4648')
 const sha512256 = require('js-sha512').sha512_256
 
