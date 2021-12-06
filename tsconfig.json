@@ -2,6 +2,10 @@
   "include": [
     "src/**/*"
   ],
+  "exclude": [
+    "src/test/**",
+    "src/**/*.test.ts"
+  ],
   "compilerOptions": {
     "outDir": "lib",
     "target": "es2016",
@@ -13,6 +17,7 @@
     "strict": true,
     "alwaysStrict": true,
     "skipLibCheck": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "sourceMap": true
   }
 }

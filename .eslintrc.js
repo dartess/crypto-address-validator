@@ -15,6 +15,7 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/member-delimiter-style': 'error',
     '@typescript-eslint/naming-convention': 'off',
     'import/prefer-default-export': 'off',
     'max-len': ['error', 100, 2, {

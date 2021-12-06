@@ -59,3 +59,7 @@ typings/
 
 # .idea
 .idea
+
+# tmp
+lib/
+

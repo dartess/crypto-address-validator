@@ -24,7 +24,7 @@ const IOSTValidator = require('./validators/iost_validator')
 const XTZValidator = require('./validators/xtz_validator')
 const HBARValidator = require('./validators/hbar_validator')
 const STXValidator = require('./validators/stx_validator')
-const ALGOValidator = require('./validators/algo_validator')
+import ALGOValidator from './validators/algo_validator';
 const BCHValidator = require('./validators/bitcoincash_validator')
 const SYSValidator = require('./validators/sys_validator')
 

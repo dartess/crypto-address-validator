@@ -535,12 +535,6 @@ describe('WAValidator.validate()', function () {
       valid('0xda816e2122a8a39b0926bfa84edd3d42477e9efd', 'lend')
     })
 
-    it('should return true for correct Algorand addresses', () => {
-      valid('LCRDY3LYAANTVS3XRHEHWHGXRTKZYVTX55P5IA2AT5ZDJ4CWZFFZIKVHLI', 'algo')
-      valid('SP745JJR4KPRQEXJZHVIEN736LYTL2T2DFMG3OIIFJBV66K73PHNMDCZVM', 'algo')
-      valid('AKHSHWO2TUWE53RMVG6ZUBNAEX6MTYPT76TCIDCDWYUUTK6HCJTZS2HDQU', 'algo')
-    })
-
     it('should return true for correct Enigma addresses', () => {
       valid('0xd3bb6192e78880bf7322dc557673ce45a77dd568', 'eng')
       valid('0x48337b8dd78a9761a73d0fbb8f5c8a0ddda32d85', 'eng')
