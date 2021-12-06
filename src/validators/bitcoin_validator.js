@@ -1,6 +1,6 @@
-import { base58 } from './crypto/base58';
-var segwit = require('./crypto/segwit_addr')
-var cryptoUtils = require('./crypto/utils')
+import { base58 } from '../crypto/base58';
+var segwit = require('../crypto/segwit_addr')
+var cryptoUtils = require('../crypto/utils')
 
 var DEFAULT_NETWORK_TYPE = 'prod'
 

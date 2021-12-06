@@ -1,8 +1,8 @@
-var utils = require('./crypto/utils')
+var utils = require('../crypto/utils')
 
 const ALLOWED_CHARS = 'qpzry9x8gf2tvdw0s3jn54khce6mua7l'
 
-var regexp = new RegExp('^(cosmos)1([' + ALLOWED_CHARS + ']+)$') // cosmos + bech32 separated by '1'
+var regexp = new RegExp('^(zil)1([' + ALLOWED_CHARS + ']+)$') // zil + bech32 separated by '1'
 
 module.exports = {
   isValidAddress: function (address, currency, networkType) {

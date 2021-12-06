@@ -1,6 +1,6 @@
-import { cnBase58 } from './crypto/cnBase58';
+import { cnBase58 } from '../crypto/cnBase58';
 
-var cryptoUtils = require('./crypto/utils')
+var cryptoUtils = require('../crypto/utils')
 
 var DEFAULT_NETWORK_TYPE = 'prod'
 var addressRegTest = new RegExp('^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{95}$')

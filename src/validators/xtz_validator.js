@@ -1,4 +1,4 @@
-import { base58 } from './crypto/base58';
+import { base58 } from '../crypto/base58';
 
 function getDecoded (address) {
   try {
