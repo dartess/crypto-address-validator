@@ -438,10 +438,6 @@ describe('WAValidator.validate()', function () {
     it('should return true for correct Paxos Standard Token addresses', () => {
       valid('0xda816e2122a8a39b0926bfa84edd3d42477e9efd', 'pax')
     })
-    it('should return true for correct Aeternity addresses', () => {
-      valid('ak_AT2bs7LkqwKbPUj5waoqq1E7QYgRzXUbaBanDHXDVsaCJ8gRA', 'ae')
-      valid('ak_8QxnP9qXP3NpA4fskYZE7P1GfHzKZAMmoNuok7jJC5NqVYi21', 'ae')
-    })
     it('should return true for correct Siacoin addresses', () => {
       valid('1acc2bc035b6606bd612b6114efea1102bd4499c0edf559469de7f40076f1c54e4eed3c5f1ac', 'sc')
     })
@@ -793,11 +789,6 @@ describe('WAValidator.validate()', function () {
     })
     it('should return false for incorrect Paxos Standard Token addresses', () => {
       invalid('0xda816e2122a8a39b0926bfa84edd3d42477e9efE', 'pax')
-    })
-    it('should return false for incorrect Aeternity addresses', () => {
-      invalid('aj_AT2bs7LkqwKbPUj5waoqq1E7QYgRzXUbaBanDHXDVsaCJ8gRA', 'ae')
-      invalid('ak_8QlnP9qXP3NpA4fskYZE7P1GfHzKZAMmoNuok7jJC5NqVYi21', 'ae')
-      invalid('ak_8QxnP9qXP3NpA4fskYZE7P1GfHzKZAMmoNuok7jJC5NqVYi212', 'ae')
     })
     it('should return false for incorrect Siacoin addresses', () => {
       invalid('1acc2bc035b6606bd612b6114efea1102bd4499c0edf559469de7f40076f1c54e4eed3c5f1a', 'sc')

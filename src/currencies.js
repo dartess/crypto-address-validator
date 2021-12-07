@@ -12,7 +12,7 @@ const AUDValidator = require('./validators/aud_validator')
 const NEMValidator = require('./validators/nem_validator')
 const BTSValidator = require('./validators/bts_validator')
 const ICXValidator = require('./validators/icx_validator')
-const AEValidator = require('./validators/ae_validator')
+import AEValidator from './validators/ae_validator'
 const SCValidator = require('./validators/sc_validator')
 const ATOMValidator = require('./validators/atom_validator')
 const STEEMValidator = require('./validators/steem_validator')
