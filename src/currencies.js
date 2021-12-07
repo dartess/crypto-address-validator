@@ -8,7 +8,7 @@ const LSKValidator = require('./validators/lisk_validator')
 const IOTAValidator = require('./validators/iota_validator')
 const EOSValidator = require('./validators/eos_validator')
 const XLMValidator = require('./validators/lumen_validator')
-const AUDValidator = require('./validators/aud_validator')
+import AUDValidator from './validators/aud_validator'
 const NEMValidator = require('./validators/nem_validator')
 const BTSValidator = require('./validators/bts_validator')
 const ICXValidator = require('./validators/icx_validator')
