@@ -469,9 +469,6 @@ describe('WAValidator.validate()', function () {
     it('should return true for correct aelf addresses', () => {
       valid('0xda816e2122a8a39b0926bfa84edd3d42477e9efd', 'elf')
     })
-    it('should return true for correct Ardor addresses', () => {
-      valid('ARDOR-HFNE-E2VE-SMV3-DCRZ8', 'ardr')
-    })
     it('should return true for correct Binance Coin addresses', () => {
       valid('bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23', 'bnb')
       valid('bnb142q467df6jun6rt5u2ar58sp47hm5f9wvz2cvg', 'bnb')
@@ -837,11 +834,6 @@ describe('WAValidator.validate()', function () {
     })
     it('should return false for incorrect aelf addresses', () => {
       invalid('0xda816e2122a8a39b0926bfa84edd3d42477e9efE', 'elf')
-    })
-    it('should return false for incorrect Ardor addresses', () => {
-      invalid('ARDOR-HFNE-a2VE-SMV3-DCRZ8', 'ardr')
-      invalid('ARDOR-HFNE-E2VE-SMV3-DCRZ', 'ardr')
-      invalid('ARD0R-HFNE-E2VE-SMV3-DCRZ8', 'ardr')
     })
     it('should return false for incorrect Syscoin Addresses', () => {
       invalid('1EQUz46mFC5Wa4hbmfp7pzJa3tzNLWxyfr', 'sys')

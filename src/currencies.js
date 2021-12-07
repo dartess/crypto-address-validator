@@ -16,7 +16,7 @@ const AEValidator = require('./validators/ae_validator')
 const SCValidator = require('./validators/sc_validator')
 const ATOMValidator = require('./validators/atom_validator')
 const STEEMValidator = require('./validators/steem_validator')
-const ARDRValidator = require('./validators/ardr_validator')
+import ARDRValidator from './validators/ardr_validator'
 const BNBValidator = require('./validators/bnb_validator')
 const ZILValidator = require('./validators/zil_validator')
 const NXSValidator = require('./validators/nxs_validator')
