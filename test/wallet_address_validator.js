@@ -441,9 +441,6 @@ describe('WAValidator.validate()', function () {
     it('should return true for correct Siacoin addresses', () => {
       valid('1acc2bc035b6606bd612b6114efea1102bd4499c0edf559469de7f40076f1c54e4eed3c5f1ac', 'sc')
     })
-    it('should return true for correct Cosmos addresses', () => {
-      valid('cosmos15v50ymp6n5dn73erkqtmq0u8adpl8d3ujv2e74', 'atom')
-    })
     it('should return true for correct STEEM addresses', () => {
       valid('meetcrypto8', 'steem')
     })
@@ -793,11 +790,6 @@ describe('WAValidator.validate()', function () {
     it('should return false for incorrect Siacoin addresses', () => {
       invalid('1acc2bc035b6606bd612b6114efea1102bd4499c0edf559469de7f40076f1c54e4eed3c5f1a', 'sc')
       invalid('1acc2bc035b6606bd612b6114efea1102bd4499c0edf559469de7f40076f1c54e4eed3c5f1ah', 'sc')
-    })
-    it('should return false for incorrect Cosmos addresses', () => {
-      invalid('cosmo15v50ymp6n5dn73erkqtmq0u8adpl8d3ujv2e74', 'atom')
-      invalid('cosmos25v50ymp6n5dn73erkqtmq0u8adpl8d3ujv2e74', 'atom')
-      invalid('cosmos15v50ymp6n5dn73erkQtmq0u8adpl8d3ujv2e74', 'atom')
     })
     it('should return false for incorrect STEEM addresses', () => {
       invalid('meet--crypto8', 'steem')
